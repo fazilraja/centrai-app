@@ -1,0 +1,47 @@
+[project]
+name = "voice-agent-backend"
+version = "1.0.0"
+description = "Voice agent backend with FastAPI and WebSocket"
+readme = "README.md"
+requires-python = ">=3.13"
+
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "python-multipart>=0.0.12",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "openai>=1.54.0",
+    "aiohttp>=3.10.0",
+    "python-dotenv>=1.0.0",
+    "pydub>=0.25.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "httpx>=0.27.0",
+    "ruff>=0.7.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --strict-markers --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.2.0",
+    "pytest-cov>=7.0.0",
+]
