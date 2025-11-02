@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 
 import { useState } from 'react'
-import { Home, Menu, Network, X } from 'lucide-react'
+import { Menu, X, MessageSquare, Mic } from 'lucide-react'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -44,8 +44,9 @@ export default function Header() {
         </div>
 
         <nav className="flex-1 p-4 overflow-y-auto">
+          {/* Chatbot Link - Default Option */}
           <Link
-            to="/"
+            to="/chatbot"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
             activeProps={{
@@ -53,14 +54,13 @@ export default function Header() {
                 'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
             }}
           >
-            <Home size={20} />
-            <span className="font-medium">Home</span>
+            <MessageSquare size={20} />
+            <span className="font-medium">Chatbot</span>
           </Link>
 
-          {/* Demo Links Start */}
-
+          {/* Voice Agents Link */}
           <Link
-            to="/demo/tanstack-query"
+            to="/voice-agent"
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
             activeProps={{
@@ -68,11 +68,9 @@ export default function Header() {
                 'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
             }}
           >
-            <Network size={20} />
-            <span className="font-medium">TanStack Query</span>
+            <Mic size={20} />
+            <span className="font-medium">Voice Agents</span>
           </Link>
-
-          {/* Demo Links End */}
         </nav>
       </aside>
     </>
