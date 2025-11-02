@@ -2,16 +2,16 @@
 
 @import 'tw-animate-css';
 
-/* centrAI Brand Fonts - from brand guidelines */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+/* centrAI Brand Fonts - Desert Tech Edition */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 body {
   @apply m-0;
-  /* Crimson Pro for body text - warm, humanist serif from brand guidelines */
+  /* Inter for body text - clean, modern sans-serif from Desert Tech brand guidelines */
   font-family:
-    'Crimson Pro', Charter, Georgia, 'Times New Roman', serif;
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,157 +23,157 @@ code {
 }
 
 :root {
-  /* centrAI Brand Colors - Light Mode */
-  /* Based on brand guidelines: warm neutrals and nostalgia palette */
+  /* centrAI Brand Colors - Desert Tech Light Mode */
+  /* Based on Desert Tech brand guidelines: Southwestern minimalism meets precision engineering */
   
-  /* Backgrounds - Warm neutrals foundation */
-  --background: #F5F1E8;              /* Parchment - primary background */
-  --card: #E8E3D8;                    /* Stone - elevated surfaces */
-  --surface: #D4CFC4;                 /* Dust - subtle dividers */
-  --popover: #E8E3D8;                 /* Stone - popover background */
+  /* Foundation Neutrals - Backgrounds */
+  --background: #F7F3ED;              /* Sand - primary background, warm off-white */
+  --card: #E8DCC8;                    /* Desert Beige - elevated surfaces, card backgrounds */
+  --surface: #ACA89A;                 /* Sage Gray - dividers and subtle borders */
+  --popover: #E8DCC8;                 /* Desert Beige - popover background */
   
   /* Foreground - Text colors */
-  --foreground: #4A4843;              /* Graphite - primary text */
-  --foreground-strong: #2D2B28;       /* Charcoal - headers/emphasis */
-  --foreground-muted: rgba(74, 72, 67, 0.6);  /* Graphite 60% - secondary text */
+  --foreground: #4A4843;              /* Storm Gray - body text, secondary elements */
+  --foreground-strong: #2D2B28;       /* Deep Charcoal - headers, primary text */
+  --foreground-muted: rgba(74, 72, 67, 0.6);  /* Storm Gray 60% - tertiary text */
   --card-foreground: #4A4843;
   --popover-foreground: #4A4843;
   
-  /* Primary - Faded Coral accent */
-  --primary: #E89B8B;                 /* Faded Coral - primary CTAs */
-  --primary-hover: #C87D5E;           /* Oxidized Copper - hover states */
-  --primary-foreground: #2D2B28;      /* Charcoal - text on primary */
+  /* Primary - Rust accent (PRIMARY ACCENT COLOR) */
+  --primary: #C1644F;                 /* Rust - primary CTAs, active states, emphasis */
+  --primary-hover: #A85446;           /* Adobe Red - hover states for primary */
+  --primary-foreground: #F7F3ED;      /* Sand - text on primary (high contrast) */
   
-  /* Secondary - Aged Brass */
-  --secondary: #D4A574;               /* Aged Brass - secondary actions */
-  --secondary-foreground: #2D2B28;    /* Charcoal - text on secondary */
+  /* Secondary - Deep Olive accent */
+  --secondary: #6B7456;               /* Deep Olive - secondary accent, natural feeling */
+  --secondary-foreground: #F7F3ED;    /* Sand - text on secondary */
   
   /* Muted - Subtle backgrounds */
-  --muted: #E8E3D8;                   /* Stone - muted background */
-  --muted-foreground: rgba(74, 72, 67, 0.7);  /* Graphite 70% */
+  --muted: #E8DCC8;                   /* Desert Beige - muted background */
+  --muted-foreground: rgba(74, 72, 67, 0.7);  /* Storm Gray 70% */
   
   /* Accent - Interactive elements */
-  --accent: #D4CFC4;                  /* Dust - subtle accents */
-  --accent-foreground: #2D2B28;       /* Charcoal */
+  --accent: #ACA89A;                  /* Sage Gray - subtle accents, hover states */
+  --accent-foreground: #2D2B28;       /* Deep Charcoal */
   
-  /* Semantic colors - muted versions */
-  --success: #B5BFA8;                 /* Muted Sage - success states */
-  --info: #8FA3B8;                    /* Dusty Blue - info/links */
-  --warning: #D4A664;                 /* Warning Amber */
-  --destructive: #B87A7A;             /* Error Red (muted) */
-  --destructive-foreground: #2D2B28;  /* Charcoal */
+  /* Semantic colors - Desert Tech palette */
+  --success: #7A8470;                 /* Deep Sage - success states, completion */
+  --info: #5B6B7A;                    /* Slate Blue - info messages, links */
+  --warning: #D4B996;                 /* Wheat - warnings, highlights */
+  --destructive: #A85446;             /* Adobe Red - errors, warnings */
+  --destructive-foreground: #F7F3ED;  /* Sand - text on destructive */
   
-  /* Technical palette */
-  --terminal-green: #9CAF88;          /* Success, active states */
-  --schematic-blue: #7B93A8;          /* Links, interactive elements */
+  /* Technical palette for specific UI needs */
+  --terminal-green: #7A8470;          /* Deep Sage - success, active states */
+  --schematic-blue: #5B6B7A;          /* Slate Blue - links, interactive elements */
   
   /* Borders */
-  --border: #D4CFC4;                  /* Dust - default borders */
-  --border-strong: rgba(74, 72, 67, 0.25);  /* Graphite 25% */
-  --input: #D4CFC4;                   /* Dust - input borders */
-  --ring: #E89B8B;                    /* Faded Coral - focus rings */
+  --border: #ACA89A;                  /* Sage Gray - default borders, dividers */
+  --border-strong: rgba(45, 43, 40, 0.25);  /* Deep Charcoal 25% */
+  --input: #ACA89A;                   /* Sage Gray - input borders */
+  --ring: #C1644F;                    /* Rust - focus rings */
   
   /* Sidebar specific */
-  --sidebar: #E8E3D8;                 /* Stone - slightly elevated */
-  --sidebar-foreground: #4A4843;      /* Graphite */
-  --sidebar-primary: #E89B8B;         /* Faded Coral - active item */
-  --sidebar-primary-foreground: #2D2B28;
-  --sidebar-accent: #D4CFC4;          /* Dust - hover state */
+  --sidebar: #E8DCC8;                 /* Desert Beige - slightly elevated */
+  --sidebar-foreground: #4A4843;      /* Storm Gray */
+  --sidebar-primary: #C1644F;         /* Rust - active item */
+  --sidebar-primary-foreground: #F7F3ED;  /* Sand - text on active */
+  --sidebar-accent: #ACA89A;          /* Sage Gray - hover state */
   --sidebar-accent-foreground: #2D2B28;
-  --sidebar-border: #D4CFC4;          /* Dust */
-  --sidebar-ring: #E89B8B;
+  --sidebar-border: #ACA89A;          /* Sage Gray */
+  --sidebar-ring: #C1644F;
   
-  /* Border radius - slightly rounded for organic feel */
+  /* Border radius - 8px for organic quality */
   --radius: 0.5rem;                   /* 8px - default radius */
   
-  /* Chart colors - using nostalgia palette */
-  --chart-1: #E89B8B;                 /* Faded Coral */
-  --chart-2: #D4A574;                 /* Aged Brass */
-  --chart-3: #8FA3B8;                 /* Dusty Blue */
-  --chart-4: #B5BFA8;                 /* Muted Sage */
-  --chart-5: #B87A7A;                 /* Faded Burgundy */
+  /* Chart colors - Desert Tech accent palette */
+  --chart-1: #C1644F;                 /* Rust */
+  --chart-2: #6B7456;                 /* Deep Olive */
+  --chart-3: #9B6B5C;                 /* Dusty Clay */
+  --chart-4: #D4B996;                 /* Wheat */
+  --chart-5: #5B6B7A;                 /* Slate Blue */
 
-  /* centrAI Brand Typography - from brand guidelines */
-  /* Display & Headlines: Monospace for technical authority */
+  /* centrAI Brand Typography - Desert Tech Edition */
+  /* Display & Headlines: Monospace for precision and technical authority */
   --font-display: 'IBM Plex Mono', 'Berkeley Mono', monospace;
   
-  /* Body Text: Serif for warm, humanist quality */
-  --font-body: 'Crimson Pro', Charter, Georgia, serif;
+  /* Body Text: Sans-serif for clean, modern readability */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
   /* UI Elements: Sans-serif for clean interface elements */
   --font-ui: 'Inter', 'Untitled Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .dark {
-  /* centrAI Brand Colors - Dark Mode */
+  /* centrAI Brand Colors - Desert Tech Dark Mode */
   /* Inverted hierarchy with adjusted contrast for readability */
   
   /* Backgrounds - Dark charcoal foundation */
-  --background: #2D2B28;              /* Charcoal - primary background */
+  --background: #2D2B28;              /* Deep Charcoal - primary background */
   --card: #3A3835;                    /* Lighter charcoal - elevated surfaces */
-  --surface: #4A4843;                 /* Graphite - dividers */
+  --surface: #4A4843;                 /* Storm Gray - dividers */
   --popover: #3A3835;                 /* Lighter charcoal - popover background */
   
   /* Foreground - Text colors (inverted) */
-  --foreground: #E8E3D8;              /* Stone - primary text */
-  --foreground-strong: #F5F1E8;       /* Parchment - headers/emphasis */
-  --foreground-muted: rgba(232, 227, 216, 0.6);  /* Stone 60% - secondary text */
-  --card-foreground: #E8E3D8;
-  --popover-foreground: #E8E3D8;
+  --foreground: #E8DCC8;              /* Desert Beige - primary text */
+  --foreground-strong: #F7F3ED;       /* Sand - headers/emphasis */
+  --foreground-muted: rgba(232, 220, 200, 0.6);  /* Desert Beige 60% - secondary text */
+  --card-foreground: #E8DCC8;
+  --popover-foreground: #E8DCC8;
   
-  /* Primary - Faded Coral accent (same as light mode) */
-  --primary: #E89B8B;                 /* Faded Coral - primary CTAs */
-  --primary-hover: #C87D5E;           /* Oxidized Copper - hover states */
-  --primary-foreground: #2D2B28;      /* Charcoal - text on primary */
+  /* Primary - Rust accent (same as light mode for consistency) */
+  --primary: #C1644F;                 /* Rust - primary CTAs */
+  --primary-hover: #A85446;           /* Adobe Red - hover states */
+  --primary-foreground: #F7F3ED;      /* Sand - text on primary */
   
-  /* Secondary - Aged Brass (same as light mode) */
-  --secondary: #D4A574;               /* Aged Brass - secondary actions */
-  --secondary-foreground: #2D2B28;    /* Charcoal - text on secondary */
+  /* Secondary - Deep Olive accent */
+  --secondary: #6B7456;               /* Deep Olive - secondary actions */
+  --secondary-foreground: #F7F3ED;    /* Sand - text on secondary */
   
   /* Muted - Subtle backgrounds */
   --muted: #3A3835;                   /* Lighter charcoal - muted background */
-  --muted-foreground: rgba(232, 227, 216, 0.7);  /* Stone 70% */
+  --muted-foreground: rgba(232, 220, 200, 0.7);  /* Desert Beige 70% */
   
   /* Accent - Interactive elements */
-  --accent: #4A4843;                  /* Graphite - subtle accents */
-  --accent-foreground: #F5F1E8;       /* Parchment */
+  --accent: #4A4843;                  /* Storm Gray - subtle accents */
+  --accent-foreground: #F7F3ED;       /* Sand */
   
-  /* Semantic colors - same palette, adjusted for dark mode */
-  --success: #B5BFA8;                 /* Muted Sage */
-  --info: #8FA3B8;                    /* Dusty Blue */
-  --warning: #D4A664;                 /* Warning Amber */
-  --destructive: #B87A7A;             /* Error Red (muted) */
-  --destructive-foreground: #F5F1E8;  /* Parchment */
+  /* Semantic colors - Desert Tech palette adjusted for dark */
+  --success: #7A8470;                 /* Deep Sage */
+  --info: #5B6B7A;                    /* Slate Blue */
+  --warning: #D4B996;                 /* Wheat */
+  --destructive: #A85446;             /* Adobe Red */
+  --destructive-foreground: #F7F3ED;  /* Sand */
   
   /* Technical palette */
-  --terminal-green: #9CAF88;          /* Success, active states */
-  --schematic-blue: #7B93A8;          /* Links, interactive elements */
+  --terminal-green: #7A8470;          /* Deep Sage - success, active states */
+  --schematic-blue: #5B6B7A;          /* Slate Blue - links, interactive elements */
   
   /* Borders */
-  --border: #4A4843;                  /* Graphite - default borders */
-  --border-strong: rgba(232, 227, 216, 0.25);  /* Stone 25% */
-  --input: #4A4843;                   /* Graphite - input borders */
-  --ring: #E89B8B;                    /* Faded Coral - focus rings */
+  --border: #4A4843;                  /* Storm Gray - default borders */
+  --border-strong: rgba(247, 243, 237, 0.25);  /* Sand 25% */
+  --input: #4A4843;                   /* Storm Gray - input borders */
+  --ring: #C1644F;                    /* Rust - focus rings */
   
   /* Sidebar specific - darker than main background */
   --sidebar: #232120;                 /* Darker than background */
-  --sidebar-foreground: #E8E3D8;      /* Stone */
-  --sidebar-primary: #E89B8B;         /* Faded Coral - active item */
-  --sidebar-primary-foreground: #2D2B28;
+  --sidebar-foreground: #E8DCC8;      /* Desert Beige */
+  --sidebar-primary: #C1644F;         /* Rust - active item */
+  --sidebar-primary-foreground: #F7F3ED;  /* Sand */
   --sidebar-accent: #3A3835;          /* Lighter charcoal - hover state */
-  --sidebar-accent-foreground: #F5F1E8;
-  --sidebar-border: #4A4843;          /* Graphite */
-  --sidebar-ring: #E89B8B;
+  --sidebar-accent-foreground: #F7F3ED;
+  --sidebar-border: #4A4843;          /* Storm Gray */
+  --sidebar-ring: #C1644F;
   
   /* Border radius - same as light mode */
   --radius: 0.5rem;                   /* 8px - default radius */
   
-  /* Chart colors - same nostalgia palette */
-  --chart-1: #E89B8B;                 /* Faded Coral */
-  --chart-2: #D4A574;                 /* Aged Brass */
-  --chart-3: #8FA3B8;                 /* Dusty Blue */
-  --chart-4: #B5BFA8;                 /* Muted Sage */
-  --chart-5: #B87A7A;                 /* Faded Burgundy */
+  /* Chart colors - Desert Tech accent palette */
+  --chart-1: #C1644F;                 /* Rust */
+  --chart-2: #6B7456;                 /* Deep Olive */
+  --chart-3: #9B6B5C;                 /* Dusty Clay */
+  --chart-4: #D4B996;                 /* Wheat */
+  --chart-5: #5B6B7A;                 /* Slate Blue */
 }
 
 @theme inline {

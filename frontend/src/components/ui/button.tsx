@@ -6,11 +6,13 @@ import { cn } from "@/lib/utils"
 
 /**
  * Button variants using class-variance-authority.
- * Follows centrAI brand guidelines:
- * - Border radius: 4px (rounded-[4px] for organic feel)
- * - Padding: Brand-specified dimensions
- * - Colors: Faded Coral primary, Aged Brass secondary
- * - Transitions: 200ms as per brand animation principles
+ * Follows centrAI Desert Tech brand guidelines:
+ * - Border radius: 4px (rounded-[4px] for organic quality)
+ * - Padding: 14px vertical, 32px horizontal (brand-specified dimensions)
+ * - Colors: Rust (#C1644F) primary, Deep Olive (#6B7456) secondary
+ * - Font: IBM Plex Mono 500 weight for technical authority
+ * - Transitions: 200ms as per brand animation principles (subtle, purposeful)
+ * - Hover: Adobe Red (#A85446) for primary buttons
  */
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[4px] text-sm font-medium font-ui transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",

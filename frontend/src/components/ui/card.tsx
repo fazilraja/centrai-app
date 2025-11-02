@@ -3,13 +3,14 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 /**
- * Card component with centrAI brand styling.
+ * Card component with centrAI Desert Tech brand styling.
  * 
  * Features:
  * - Border radius: 8px (brand specification for organic quality)
- * - Background: Stone (#E8E3D8) from brand palette
- * - Border: Dust (#D4CFC4) for subtle definition
- * - Subtle shadow for depth
+ * - Background: Desert Beige (#E8DCC8) from Desert Tech palette
+ * - Border: Sage Gray (#ACA89A) for subtle definition
+ * - Subtle shadow for depth: 0 2px 8px rgba(45, 43, 40, 0.06)
+ * - Hover effect: Subtle lift (translateY(-2px)) with enhanced shadow
  * 
  * @param {React.ComponentProps<"div">} props - Standard div props
  * @returns {JSX.Element} Styled card container
