@@ -2,91 +2,178 @@
 
 @import 'tw-animate-css';
 
+/* centrAI Brand Fonts - from brand guidelines */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 body {
   @apply m-0;
+  /* Crimson Pro for body text - warm, humanist serif from brand guidelines */
   font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    'Crimson Pro', Charter, Georgia, 'Times New Roman', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
+  /* IBM Plex Mono for code - technical heritage from brand guidelines */
   font-family:
-    source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    'IBM Plex Mono', 'Berkeley Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.871 0.006 286.286);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.871 0.006 286.286);
+  /* centrAI Brand Colors - Light Mode */
+  /* Based on brand guidelines: warm neutrals and nostalgia palette */
+  
+  /* Backgrounds - Warm neutrals foundation */
+  --background: #F5F1E8;              /* Parchment - primary background */
+  --card: #E8E3D8;                    /* Stone - elevated surfaces */
+  --surface: #D4CFC4;                 /* Dust - subtle dividers */
+  --popover: #E8E3D8;                 /* Stone - popover background */
+  
+  /* Foreground - Text colors */
+  --foreground: #4A4843;              /* Graphite - primary text */
+  --foreground-strong: #2D2B28;       /* Charcoal - headers/emphasis */
+  --foreground-muted: rgba(74, 72, 67, 0.6);  /* Graphite 60% - secondary text */
+  --card-foreground: #4A4843;
+  --popover-foreground: #4A4843;
+  
+  /* Primary - Faded Coral accent */
+  --primary: #E89B8B;                 /* Faded Coral - primary CTAs */
+  --primary-hover: #C87D5E;           /* Oxidized Copper - hover states */
+  --primary-foreground: #2D2B28;      /* Charcoal - text on primary */
+  
+  /* Secondary - Aged Brass */
+  --secondary: #D4A574;               /* Aged Brass - secondary actions */
+  --secondary-foreground: #2D2B28;    /* Charcoal - text on secondary */
+  
+  /* Muted - Subtle backgrounds */
+  --muted: #E8E3D8;                   /* Stone - muted background */
+  --muted-foreground: rgba(74, 72, 67, 0.7);  /* Graphite 70% */
+  
+  /* Accent - Interactive elements */
+  --accent: #D4CFC4;                  /* Dust - subtle accents */
+  --accent-foreground: #2D2B28;       /* Charcoal */
+  
+  /* Semantic colors - muted versions */
+  --success: #B5BFA8;                 /* Muted Sage - success states */
+  --info: #8FA3B8;                    /* Dusty Blue - info/links */
+  --warning: #D4A664;                 /* Warning Amber */
+  --destructive: #B87A7A;             /* Error Red (muted) */
+  --destructive-foreground: #2D2B28;  /* Charcoal */
+  
+  /* Technical palette */
+  --terminal-green: #9CAF88;          /* Success, active states */
+  --schematic-blue: #7B93A8;          /* Links, interactive elements */
+  
+  /* Borders */
+  --border: #D4CFC4;                  /* Dust - default borders */
+  --border-strong: rgba(74, 72, 67, 0.25);  /* Graphite 25% */
+  --input: #D4CFC4;                   /* Dust - input borders */
+  --ring: #E89B8B;                    /* Faded Coral - focus rings */
+  
+  /* Sidebar specific */
+  --sidebar: #E8E3D8;                 /* Stone - slightly elevated */
+  --sidebar-foreground: #4A4843;      /* Graphite */
+  --sidebar-primary: #E89B8B;         /* Faded Coral - active item */
+  --sidebar-primary-foreground: #2D2B28;
+  --sidebar-accent: #D4CFC4;          /* Dust - hover state */
+  --sidebar-accent-foreground: #2D2B28;
+  --sidebar-border: #D4CFC4;          /* Dust */
+  --sidebar-ring: #E89B8B;
+  
+  /* Border radius - slightly rounded for organic feel */
+  --radius: 0.5rem;                   /* 8px - default radius */
+  
+  /* Chart colors - using nostalgia palette */
+  --chart-1: #E89B8B;                 /* Faded Coral */
+  --chart-2: #D4A574;                 /* Aged Brass */
+  --chart-3: #8FA3B8;                 /* Dusty Blue */
+  --chart-4: #B5BFA8;                 /* Muted Sage */
+  --chart-5: #B87A7A;                 /* Faded Burgundy */
+
+  /* centrAI Brand Typography - from brand guidelines */
+  /* Display & Headlines: Monospace for technical authority */
+  --font-display: 'IBM Plex Mono', 'Berkeley Mono', monospace;
+  
+  /* Body Text: Serif for warm, humanist quality */
+  --font-body: 'Crimson Pro', Charter, Georgia, serif;
+  
+  /* UI Elements: Sans-serif for clean interface elements */
+  --font-ui: 'Inter', 'Untitled Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
+  /* centrAI Brand Colors - Dark Mode */
+  /* Inverted hierarchy with adjusted contrast for readability */
+  
+  /* Backgrounds - Dark charcoal foundation */
+  --background: #2D2B28;              /* Charcoal - primary background */
+  --card: #3A3835;                    /* Lighter charcoal - elevated surfaces */
+  --surface: #4A4843;                 /* Graphite - dividers */
+  --popover: #3A3835;                 /* Lighter charcoal - popover background */
+  
+  /* Foreground - Text colors (inverted) */
+  --foreground: #E8E3D8;              /* Stone - primary text */
+  --foreground-strong: #F5F1E8;       /* Parchment - headers/emphasis */
+  --foreground-muted: rgba(232, 227, 216, 0.6);  /* Stone 60% - secondary text */
+  --card-foreground: #E8E3D8;
+  --popover-foreground: #E8E3D8;
+  
+  /* Primary - Faded Coral accent (same as light mode) */
+  --primary: #E89B8B;                 /* Faded Coral - primary CTAs */
+  --primary-hover: #C87D5E;           /* Oxidized Copper - hover states */
+  --primary-foreground: #2D2B28;      /* Charcoal - text on primary */
+  
+  /* Secondary - Aged Brass (same as light mode) */
+  --secondary: #D4A574;               /* Aged Brass - secondary actions */
+  --secondary-foreground: #2D2B28;    /* Charcoal - text on secondary */
+  
+  /* Muted - Subtle backgrounds */
+  --muted: #3A3835;                   /* Lighter charcoal - muted background */
+  --muted-foreground: rgba(232, 227, 216, 0.7);  /* Stone 70% */
+  
+  /* Accent - Interactive elements */
+  --accent: #4A4843;                  /* Graphite - subtle accents */
+  --accent-foreground: #F5F1E8;       /* Parchment */
+  
+  /* Semantic colors - same palette, adjusted for dark mode */
+  --success: #B5BFA8;                 /* Muted Sage */
+  --info: #8FA3B8;                    /* Dusty Blue */
+  --warning: #D4A664;                 /* Warning Amber */
+  --destructive: #B87A7A;             /* Error Red (muted) */
+  --destructive-foreground: #F5F1E8;  /* Parchment */
+  
+  /* Technical palette */
+  --terminal-green: #9CAF88;          /* Success, active states */
+  --schematic-blue: #7B93A8;          /* Links, interactive elements */
+  
+  /* Borders */
+  --border: #4A4843;                  /* Graphite - default borders */
+  --border-strong: rgba(232, 227, 216, 0.25);  /* Stone 25% */
+  --input: #4A4843;                   /* Graphite - input borders */
+  --ring: #E89B8B;                    /* Faded Coral - focus rings */
+  
+  /* Sidebar specific - darker than main background */
+  --sidebar: #232120;                 /* Darker than background */
+  --sidebar-foreground: #E8E3D8;      /* Stone */
+  --sidebar-primary: #E89B8B;         /* Faded Coral - active item */
+  --sidebar-primary-foreground: #2D2B28;
+  --sidebar-accent: #3A3835;          /* Lighter charcoal - hover state */
+  --sidebar-accent-foreground: #F5F1E8;
+  --sidebar-border: #4A4843;          /* Graphite */
+  --sidebar-ring: #E89B8B;
+  
+  /* Border radius - same as light mode */
+  --radius: 0.5rem;                   /* 8px - default radius */
+  
+  /* Chart colors - same nostalgia palette */
+  --chart-1: #E89B8B;                 /* Faded Coral */
+  --chart-2: #D4A574;                 /* Aged Brass */
+  --chart-3: #8FA3B8;                 /* Dusty Blue */
+  --chart-4: #B5BFA8;                 /* Muted Sage */
+  --chart-5: #B87A7A;                 /* Faded Burgundy */
 }
 
 @theme inline {
@@ -134,5 +221,22 @@ code {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* centrAI Brand Typography Utilities */
+  /* Use these classes for consistent brand typography throughout the app */
+  
+  .font-display {
+    font-family: var(--font-display);
+  }
+  
+  .font-body {
+    font-family: var(--font-body);
+  }
+  
+  .font-ui {
+    font-family: var(--font-ui);
   }
 }

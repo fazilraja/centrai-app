@@ -2,12 +2,24 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Card component with centrAI brand styling.
+ * 
+ * Features:
+ * - Border radius: 8px (brand specification for organic quality)
+ * - Background: Stone (#E8E3D8) from brand palette
+ * - Border: Dust (#D4CFC4) for subtle definition
+ * - Subtle shadow for depth
+ * 
+ * @param {React.ComponentProps<"div">} props - Standard div props
+ * @returns {JSX.Element} Styled card container
+ */
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-lg border py-6 shadow-sm",
         className
       )}
       {...props}
